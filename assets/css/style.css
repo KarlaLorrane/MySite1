@@ -580,6 +580,10 @@ section {
 .contact .php-email-form button[type=submit]:hover {
   background: #37b3ed;
 }
+
+.imgedit {
+  box-shadow: 0 0 24px 0 rgb(0 0 0 / 25%);
+}
 @-webkit-keyframes animate-loading {
   0% {
     transform: rotate(0deg);
