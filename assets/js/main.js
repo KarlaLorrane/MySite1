@@ -1,9 +1,3 @@
-/**
-* Template Name: iPortfolio - v3.7.0
-* Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
 (function() {
   "use strict";
 
@@ -162,25 +156,25 @@
    * Porfolio isotope and filter
    */
   window.addEventListener('load', () => {
-    let portfolioContainer = select('.portfolio-container');
-    if (portfolioContainer) {
-      let portfolioIsotope = new Isotope(portfolioContainer, {
-        itemSelector: '.portfolio-item'
+    let certificatesContainer = select('.certificates-container');
+    if (certificatesContainer) {
+      let certificatesIsotope = new Isotope(certificatesContainer, {
+        itemSelector: '.certificates-item'
       });
 
-      let portfolioFilters = select('#portfolio-flters li', true);
+      let certificatesFilters = select('#certificates-flters li', true);
 
-      on('click', '#portfolio-flters li', function(e) {
+      on('click', '#certificates-flters li', function(e) {
         e.preventDefault();
-        portfolioFilters.forEach(function(el) {
+        certificatesFilters.forEach(function(el) {
           el.classList.remove('filter-active');
         });
         this.classList.add('filter-active');
 
-        portfolioIsotope.arrange({
+        certificatesIsotope.arrange({
           filter: this.getAttribute('data-filter')
         });
-        portfolioIsotope.on('arrangeComplete', function() {
+        certificatesIsotope.on('arrangeComplete', function() {
           AOS.refresh()
         });
       }, true);
@@ -189,16 +183,16 @@
   });
 
   /**
-   * Initiate portfolio lightbox 
+   * Initiate certificates lightbox 
    */
-  const portfolioLightbox = GLightbox({
-    selector: '.portfolio-lightbox'
+  const certificatesLightbox = GLightbox({
+    selector: '.certificates-lightbox'
   });
 
   /**
-   * Portfolio details slider
+   * certificates details slider
    */
-  new Swiper('.portfolio-details-slider', {
+  new Swiper('.certificates-details-slider', {
     speed: 400,
     loop: true,
     autoplay: {
@@ -209,35 +203,6 @@
       el: '.swiper-pagination',
       type: 'bullets',
       clickable: true
-    }
-  });
-
-  /**
-   * Testimonials slider
-   */
-  new Swiper('.testimonials-slider', {
-    speed: 600,
-    loop: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false
-    },
-    slidesPerView: 'auto',
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'bullets',
-      clickable: true
-    },
-    breakpoints: {
-      320: {
-        slidesPerView: 1,
-        spaceBetween: 20
-      },
-
-      1200: {
-        slidesPerView: 3,
-        spaceBetween: 20
-      }
     }
   });
 
